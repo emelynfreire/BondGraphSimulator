@@ -1,0 +1,7 @@
+{
+  "formato": "circuito",
+  "nome": "Retificador de meia onda",
+  "fonte": {"tipo": "tensao", "sinal": {"tipo": "seno", "amplitude": 10, "frequencia": 60}},
+  "circuito": {"serie": [{"diodo": {}}, {"paralelo": [{"R": 1000}, {"C": 1e-4}]}]},
+  "simulacao": {"t_final": 0.1}
+}

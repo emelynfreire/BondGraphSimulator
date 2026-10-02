@@ -1,0 +1,19 @@
+{
+  "formato": "bondgraph",
+  "nome": "Motor CC (eletrico + mecanico)",
+  "dominio": "multidominio",
+  "elementos": [
+    {"nome": "V",  "tipo": "Se", "valor": 12},
+    {"nome": "Je", "tipo": "1"},
+    {"nome": "Ra", "tipo": "R",  "valor": 1.0},
+    {"nome": "La", "tipo": "I",  "valor": 0.005},
+    {"nome": "Km", "tipo": "GY", "valor": 0.05},
+    {"nome": "Jm", "tipo": "1"},
+    {"nome": "J",  "tipo": "I",  "valor": 0.0002},
+    {"nome": "b",  "tipo": "R",  "valor": 0.0001}
+  ],
+  "bonds": [
+    ["V", "Je"], ["Je", "Ra"], ["Je", "La"], ["Je", "Km"],
+    ["Km", "Jm"], ["Jm", "J"], ["Jm", "b"]
+  ]
+}

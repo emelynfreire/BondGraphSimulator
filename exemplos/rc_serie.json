@@ -1,0 +1,6 @@
+{
+  "formato": "circuito",
+  "nome": "RC serie",
+  "fonte": {"tipo": "tensao", "valor": 10},
+  "circuito": {"serie": [{"R": 100}, {"C": 1e-6}]}
+}

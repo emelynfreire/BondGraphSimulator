@@ -1,0 +1,7 @@
+numpy
+scipy
+sympy
+networkx
+matplotlib
+scikit-learn
+pytest

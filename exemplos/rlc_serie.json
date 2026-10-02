@@ -1,0 +1,7 @@
+{
+  "formato": "circuito",
+  "nome": "RLC serie",
+  "fonte": {"tipo": "tensao", "valor": 5},
+  "circuito": {"serie": [{"R": 10}, {"L": 0.01}, {"C": 1e-4}]},
+  "simulacao": {"t_final": 0.02}
+}

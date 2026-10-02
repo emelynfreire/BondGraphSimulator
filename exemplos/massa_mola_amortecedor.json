@@ -1,0 +1,6 @@
+{
+  "formato": "circuito",
+  "nome": "Massa-mola-amortecedor",
+  "fonte": {"tipo": "forca", "valor": 10},
+  "circuito": {"serie": [{"massa": 2}, {"mola": 50}, {"amortecedor": 3}]}
+}
