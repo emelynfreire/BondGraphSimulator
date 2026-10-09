@@ -1,0 +1,9 @@
+caso,metodo,ordem_observada,ordem_teorica,pontos_usados
+rc_serie,Euler,1.002169e+00,1,4
+rc_serie,RK4,4.034609e+00,4,4
+rlc_serie,Euler,1.014665e+00,1,4
+rlc_serie,RK4,4.012033e+00,4,4
+massa_mola_amortecedor,Euler,1.076011e+00,1,4
+massa_mola_amortecedor,RK4,4.004707e+00,4,4
+motor_cc,Euler,1.002421e+00,1,4
+motor_cc,RK4,4.063609e+00,4,4

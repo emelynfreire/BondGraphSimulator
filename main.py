@@ -52,6 +52,8 @@ def main():
     fig2 = plt.figure(figsize=(8, 6))
     plotar_resultado(res, fig2)
     if args.figura:
+        import os
+        os.makedirs(os.path.dirname(os.path.abspath(args.figura)), exist_ok=True)
         base = args.figura.rsplit(".", 1)[0]
         fig1.savefig(base + "_bondgraph.png", dpi=120)
         fig2.savefig(args.figura, dpi=120)

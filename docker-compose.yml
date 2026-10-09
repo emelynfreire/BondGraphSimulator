@@ -1,0 +1,58 @@
+# Uso (na pasta do projeto):
+#   docker compose up --build                 interface web em http://localhost:8501
+#   docker compose run --rm testes            executa os testes de validacao
+#   docker compose run --rm validar           gera validacao.png nesta pasta
+#   docker compose run --rm experimentos      roda os experimentos do artigo -> resultados/
+#   docker compose run --rm cli "Um resistor de 100 Ohms em serie com um capacitor de 1 uF conectado a uma fonte de tensao de 10V" --figura saida/rc.png
+#
+# A pasta do projeto e montada em /app: alteracoes no codigo valem sem reconstruir
+# a imagem, e os arquivos gerados (figuras, CSV) aparecem aqui.
+
+x-base: &base
+  build: .
+  image: simulador-bondgraph
+  volumes:
+    - .:/app
+
+services:
+  web:
+    <<: *base
+    ports:
+      - "8501:8501"
+
+  testes:
+    <<: *base
+    profiles: ["ferramentas"]
+    command: ["python", "-m", "pytest", "-v", "-p", "no:cacheprovider"]
+
+  validar:
+    <<: *base
+    profiles: ["ferramentas"]
+    command: ["python", "validar.py"]
+
+  cli:
+    <<: *base
+    profiles: ["ferramentas"]
+    entrypoint: ["python", "main.py"]
+
+  # Experimentos do artigo em ambiente controlado: sem rede, codigo montado somente
+  # para leitura (o conteiner so consegue escrever em resultados/), 1 CPU e 1 GB de
+  # memoria, uma thread nas bibliotecas numericas. Parametros: experimentos/config.json
+  experimentos:
+    build: .
+    image: simulador-bondgraph
+    profiles: ["ferramentas"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    cpus: 1.0
+    mem_limit: 1g
+    environment:
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    volumes:
+      - .:/app:ro
+      - ./resultados:/app/resultados
+    command: ["python", "experimentos.py"]

@@ -1,0 +1,46 @@
+E1  PRECISAO (simulacao x solucao analitica, metodo RK45)
+caso                    erro_max_relativo  nrmse     erro_balanco_energia
+rc_serie                3.13e-12           5.82e-13  2.12e-06            
+rlc_serie               1.65e-09           5.30e-10  3.34e-05            
+massa_mola_amortecedor  4.27e-08           1.72e-08  1.34e-04            
+motor_cc                1.48e-09           2.10e-10  3.00e-05            
+
+E2  ORDEM DE CONVERGENCIA OBSERVADA
+caso                    metodo  ordem_observada  ordem_teorica  pontos_usados
+rc_serie                Euler   1                1              4            
+rc_serie                RK4     4.03             4              4            
+rlc_serie               Euler   1.01             1              4            
+rlc_serie               RK4     4.01             4              4            
+massa_mola_amortecedor  Euler   1.08             1              4            
+massa_mola_amortecedor  RK4     4                4              4            
+motor_cc                Euler   1                1              4            
+motor_cc                RK4     4.06             4              4            
+
+E3  METODOS ADAPTATIVOS
+caso                    metodo  erro_max_relativo  avaliacoes_f  tempo_mediano_s
+rc_serie                RK45    3.13e-12           1204          0.0168         
+rc_serie                RK23    9.11e-08           730           0.0155         
+rc_serie                DOP853  5.37e-16           3004          0.0291         
+rc_serie                Radau   4.11e-10           1409          0.0478         
+rc_serie                BDF     3.85e-08           445           0.0348         
+rc_serie                LSODA   1.35e-08           404           0.00803        
+rlc_serie               RK45    1.65e-09           1235          0.0171         
+rlc_serie               RK23    7.52e-08           3494          0.0579         
+rlc_serie               DOP853  1.01e-14           3020          0.0308         
+rlc_serie               Radau   7.73e-09           2380          0.0743         
+rlc_serie               BDF     1.40e-07           686           0.044          
+rlc_serie               LSODA   5.74e-09           477           0.00914        
+massa_mola_amortecedor  RK45    4.27e-08           1679          0.0219         
+massa_mola_amortecedor  RK23    2.88e-07           8495          0.11           
+massa_mola_amortecedor  DOP853  8.91e-13           3047          0.0322         
+massa_mola_amortecedor  Radau   1.16e-08           5566          0.17           
+massa_mola_amortecedor  BDF     6.30e-07           1407          0.0858         
+massa_mola_amortecedor  LSODA   1.11e-07           1124          0.0153         
+motor_cc                RK45    1.48e-09           1307          0.0188         
+motor_cc                RK23    4.65e-08           1640          0.0277         
+motor_cc                DOP853  2.66e-11           3035          0.0351         
+motor_cc                Radau   8.01e-10           1902          0.0647         
+motor_cc                BDF     1.07e-08           703           0.0455         
+motor_cc                LSODA   3.69e-08           366           0.00938        
+
+Assinatura dos resultados numericos (SHA-256): 28fe6057c29642398f590fed164cbba55f23d9e0cd0dbdb3e389bae49cdbc6e2

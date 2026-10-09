@@ -1,7 +1,9 @@
-numpy
-scipy
-sympy
-networkx
-matplotlib
-scikit-learn
-pytest
+# Versoes fixadas: as mesmas em que os testes e os experimentos foram verificados.
+numpy==2.5.3
+scipy==1.18.1
+sympy==1.14.0
+networkx==3.7
+matplotlib==3.11.2
+scikit-learn==1.9.1
+pytest==9.1.1
+streamlit==1.64.0
